@@ -1,0 +1,15 @@
+version: "2"
+
+services: 
+  db:
+    image: mysql:8
+    volumes:
+      - node_mysql:/var/lib/mysql
+    ports: 
+      - 3306:3306
+    environment: 
+      MYSQL_ROOT_PASSWORD: teste
+      TZ: America/Sao_Paulo
+      
+volumes:
+  node_mysql:
