@@ -5,16 +5,19 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "style:check": "prettier --check **/*.js",
+    "style:fix": "prettier --write **/*.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   },
   "dependencies": {
     "consign": "^0.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.3.0"
   }
 }

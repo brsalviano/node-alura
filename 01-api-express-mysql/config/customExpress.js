@@ -1,18 +1,15 @@
-const express = require("express");
-const consign = require("consign");
+const express = require('express');
+const consign = require('consign');
 
 module.exports = () => {
+  const app = express();
 
-    const app = express();
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
 
-    app.use(express.urlencoded({ extended: true }));
-    app.use(express.json());
+  //Com o consign, conseguimos automatizar o carregamento
+  //de scripts de uma pasta. No caso, controllers
+  consign().include('controllers').into(app);
 
-    //Com o consign, conseguimos automatizar o carregamento
-    //de scripts de uma pasta. No caso, controllers
-    consign()
-        .include("controllers")
-        .into(app);
-
-    return app;
-}
+  return app;
+};

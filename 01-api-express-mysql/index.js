@@ -1,11 +1,16 @@
-//Nesta aula o arquivo index.js foi reorganizado para
-//apenas instânciar e subir o servidor
-
-//Separamos a configuração do express em um arquivo dentro da pasta config:
 const customExpress = require("./config/customExpress");
+const conexao = require("./infraestrutura/conexao");
+const Tabelas = require("./infraestrutura/tabelas");
 
-//A instância gerada e devolvida por customExpress 
-//já contém configurações de rotas do express
-const app = customExpress();
+conexao.connect((erro) => {
+    if (erro) {
+        console.error(erro);
+    } else {
+        console.log("Conectado com sucesso");
 
-app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+        Tabelas.init(conexao);
+        const app = customExpress();
+
+        app.listen(3000, () => console.log("Servidor rodando na porta 3000"));
+    }
+})
