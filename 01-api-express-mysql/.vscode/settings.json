@@ -3,6 +3,5 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 15,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
 }
