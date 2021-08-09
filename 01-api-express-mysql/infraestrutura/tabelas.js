@@ -11,6 +11,8 @@ class Tabelas {
     sql += 'cliente varchar(50) NOT NULL, ';
     sql += 'pet varchar(20), ';
     sql += 'servico varchar(20) NOT NULL, ';
+    sql += 'data datetime NOT NULL, ';
+    sql += 'data_criacao datetime NOT NULL, ';
     sql += 'status varchar(20) NOT NULL, ';
     sql += 'observacoes TEXT, ';
     sql += 'PRIMARY KEY(id))';
